@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyFlow</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            STUDYFLOW
+        </div>
+
+        <nav>
+            <a href="#" class="active">🏠 Dashboard</a>
+<a href="#focusSection">⏱️ Focus</a>
+<a href="#subjectsSection">📚 Subjects</a>
+<a href="#tasksSection">📄 Tasks</a>
+<a href="#plannerSection">📅 Planner</a>
+            <a href="#remindersSection">🔔 Reminders</a>
+            <a href="#analyticsSection">📊 Analytics</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+<a href="#settingsSection">⚙️ Settings</a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+            <div>
+                <p class="date" id="currentDate">
+                    Thursday, October 1, 2026
+                </p>
+
+                <h1>
+                    Good evening 👋
+                </h1>
+
+                <p class="subtitle">
+                    Ready to focus and make progress?
+                </p>
+            </div>
+
+            <div class="clock" id="clock">
+                00:00
+            </div>
+
+        </header>
+
+
+        <!-- TODAY'S PROGRESS -->
+        <section class="progress-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="small-title">
+                        TODAY'S PROGRESS
+                    </p>
+
+                    <h2>
+                        Keep going!
+                    </h2>
+                </div>
+
+                <span id="progressText">
+                    0%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+                <div
+                    class="progress-fill"
+                    id="progressFill">
+                </div>
+            </div>
+
+            <p class="progress-info">
+                0h 0m studied today
+            </p>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <span class="stat-icon">⏱️</span>
+
+                <p>Study Time</p>
+
+                <h3 id="studyTime">
+                    0h 0m
+                </h3>
+            </div>
+
+
+            <div class="stat-card">
+                <span class="stat-icon">📚</span>
+
+                <p>Sessions</p>
+
+                <h3 id="sessionCount">
+                    0
+                </h3>
+            </div>
+
+
+            <div class="stat-card">
+                <span class="stat-icon">🔥</span>
+
+                <p>Study Streak</p>
+
+                <h3 id="streak">
+                    0 days
+                </h3>
+            </div>
+
+
+            <div class="stat-card">
+                <span class="stat-icon">🎯</span>
+
+                <p>Daily Goal</p>
+
+                <h3 id="dailyGoal">
+                    0%
+                </h3>
+            </div>
+
+        </section>
+
+
+        <!-- FOCUS + REMINDER -->
+        <section class="dashboard-grid">
+
+
+            <!-- FOCUS TIMER -->
+<div id="focusSection" class="dashboard-card focus-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <p class="small-title">
+                            FOCUS SESSION
+                        </p>
+
+                        <h2>
+                            Ready to study?
+                        </h2>
+                    </div>
+
+                    <span>
+                        ⏱️
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="timer"
+                    id="timer">
+                    25:00
+                </div>
+
+
+                <select id="subject">
+
+                    <option value="Data Mining">
+                        Data Mining
+                    </option>
+
+                    <option value="Data Structures">
+                        Data Structures
+                    </option>
+
+                    <option value="JavaScript">
+                        JavaScript
+                    </option>
+
+                    <option value="Database">
+                        Database
+                    </option>
+
+                    <option value="Operating Systems">
+                        Operating Systems
+                    </option>
+
+                </select>
+
+
+                <div class="timer-buttons">
+
+                    <button id="startBtn">
+                        Start
+                    </button>
+
+                    <button id="pauseBtn">
+                        Pause
+                    </button>
+
+                    <button id="resetBtn">
+                        Reset
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- REMINDER -->
+            <div class="dashboard-card reminder-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <p class="small-title">
+                            NEXT REMINDER
+                        </p>
+
+                        <h2 id="reminderTitle">
+                            No reminders yet
+                        </h2>
+                    </div>
+
+                    <span>
+                        🔔
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="reminder-time"
+                    id="reminderTime">
+                    --
+                </div>
+
+
+                <button
+                    class="secondary-button"
+                    id="dashboardReminderBtn"> 
+
+                    + Add Reminder
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLEEP SCHEDULE -->
+        <section class="sleep-card">
+
+            <div>
+
+                <p class="small-title">
+                    SLEEP SCHEDULE
+                </p>
+
+                <h2>
+                    Take care of your rest 🌙
+                </h2>
+
+                <p>
+                    A good study routine also needs good rest.
+                </p>
+
+            </div>
+
+
+            <div class="sleep-times">
+
+                <div>
+
+                    <span>
+                        🌙 Bedtime
+                    </span>
+
+                    <strong id="bedtime">
+                        11:00 PM
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        ☀️ Wake up
+                    </span>
+
+                    <strong id="wakeTime">
+                        7:00 AM
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT SESSIONS -->
+        <section class="recent-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="small-title">
+                        RECENT ACTIVITY
+                    </p>
+
+                    <h2>
+                        Recent Sessions
+                    </h2>
+
+                </div>
+
+                <button class="text-button">
+                    View all
+                </button>
+
+            </div>
+
+
+            <div
+                id="sessionsList"
+                class="sessions-list">
+
+                <div class="empty-state">
+
+                    <span>
+                        📖
+                    </span>
+
+                    <p>
+                        No study sessions yet.
+                    </p>
+
+                    <small>
+                        Start your first focus session!
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+<!-- TASKS SECTION -->
+<section class="tasks-section" id="tasksSection">
+
+    <div class="section-header">
+        <p class="section-label">TASKS</p>
+        <h2>Your Tasks 📝</h2>
+        <p>Organize your study tasks and keep track of what you need to do.</p>
+    </div>
+
+    <div class="tasks-container">
+
+        <div class="task-input">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What do you need to study?"
+            >
+
+            <button id="addTaskBtn">
+                + Add Task
+            </button>
+        </div>
+
+        <div class="task-list" id="taskList">
+
+            </div>
+
+    </div>
+
+</section>
+    <!-- PLANNER SECTION -->
+<section class="planner-section" id="plannerSection">
+
+    <div class="section-header">
+        <p class="section-label">PLANNER</p>
+        <h2>Study Planner 📅</h2>
+        <p>Plan your study sessions and stay organized.</p>
+    </div>
+
+    <div class="planner-container">
+
+        <div class="planner-form">
+
+            <div class="planner-field">
+                <label for="planDate">Date</label>
+                <input type="date" id="planDate">
+            </div>
+
+            <div class="planner-field">
+                <label for="planSubject">Subject</label>
+                <input
+                    type="text"
+                    id="planSubject"
+                    placeholder="e.g. Data Mining"
+                >
+            </div>
+
+            <div class="planner-field">
+                <label for="planTask">What will you study?</label>
+                <input
+                    type="text"
+                    id="planTask"
+                    placeholder="e.g. Chapter 3"
+                >
+            </div>
+
+            <button id="addPlanBtn">
+                + Add Plan
+            </button>
+
+        </div>
+
+        <div class="plans-list" id="plansList">
+
+            <div class="plan-item">
+                <div>
+                    <span class="plan-date">Today</span>
+                    <h3>Review Data Mining</h3>
+                    <p>Chapter 1</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SUBJECTS SECTION -->
+<!-- SUBJECTS SECTION -->
+<section class="subjects-section" id="subjectsSection">
+
+    <div class="section-header">
+
+        <div>
+            <p class="section-label">SUBJECTS</p>
+
+            <h2>Your Subjects 📚</h2>
+
+            <p>
+                Add and organize the subjects you are studying.
+            </p>
+        </div>
+
+        <button
+            class="add-subject-button"
+            id="addSubjectBtn"
+            type="button">
+            + Add Subject
+        </button>
+
+    </div>
+
+
+    <div
+        class="subjects-grid"
+        id="subjectsList">
+    </div>
+
+</section>
+    
+<!-- ANALYTICS SECTION -->
+<section class="analytics-section" id="analyticsSection">
+
+    <div class="section-header">
+        <p class="section-label">ANALYTICS</p>
+
+        <h2>Your Study Analytics 📊</h2>
+
+        <p>
+            Track your study progress and see how much you are improving.
+        </p>
+    </div>
+
+    <div class="analytics-grid">
+
+        <div class="analytics-card">
+            <span class="analytics-icon">⏱️</span>
+            <p>Total Study Time</p>
+            <h3 id="analyticsStudyTime">0h 0m</h3>
+        </div>
+
+        <div class="analytics-card">
+            <span class="analytics-icon">📚</span>
+            <p>Total Sessions</p>
+            <h3 id="analyticsSessions">0</h3>
+        </div>
+
+        <div class="analytics-card">
+            <span class="analytics-icon">✅</span>
+            <p>Completed Tasks</p>
+            <h3 id="analyticsTasks">0</h3>
+        </div>
+
+        <div class="analytics-card">
+            <span class="analytics-icon">🔥</span>
+            <p>Study Streak</p>
+            <h3 id="analyticsStreak">0 days</h3>
+        </div>
+
+    </div>
+
+    <div class="analytics-progress">
+
+        <div class="section-heading">
+            <div>
+                <p class="small-title">STUDY PROGRESS</p>
+                <h2>Keep building your routine</h2>
+            </div>
+
+            <span id="analyticsProgressText">0%</span>
+        </div>
+
+        <div class="progress-bar">
+            <div
+                class="progress-fill"
+                id="analyticsProgressFill"
+                style="width: 0%;">
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SETTINGS SECTION -->
+<section class="settings-section" id="settingsSection">
+
+    <div class="section-header">
+        <p class="section-label">SETTINGS</p>
+        <h2>Customize your StudyFlow ⚙️</h2>
+        <p>Make StudyFlow feel comfortable and personal for you.</p>
+    </div>
+
+    <div class="settings-grid">
+
+        <!-- APPEARANCE -->
+        <div class="settings-card">
+            <h3>🎨 Appearance</h3>
+            <p>Choose how StudyFlow looks.</p>
+
+            <label for="themeSelect">Theme</label>
+
+            <select id="themeSelect">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+
+        <!-- FOCUS -->
+        <div class="settings-card">
+            <h3>⏱️ Focus Session</h3>
+            <p>Choose your default focus time.</p>
+
+            <label for="focusDuration">Focus duration</label>
+
+            <select id="focusDuration">
+                <option value="25">25 minutes</option>
+                <option value="30">30 minutes</option>
+                <option value="45">45 minutes</option>
+                <option value="60">60 minutes</option>
+            </select>
+        </div>
+
+        <!-- SLEEP -->
+        <div class="settings-card">
+            <h3>🌙 Sleep Schedule</h3>
+            <p>Keep a healthy study routine.</p>
+
+            <label for="bedtime">Bedtime</label>
+            <input type="time" id="bedtime" value="23:00">
+
+            <label for="wakeTime">Wake up</label>
+            <input type="time" id="wakeTime" value="07:00">
+        </div>
+
+    </div>
+
+</section>
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
